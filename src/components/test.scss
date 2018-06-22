@@ -1,0 +1,27 @@
+// :root {
+//   --textColor: black;
+// }
+$primary-color: #333;
+body {
+  background: #e6e6e6; // color: var(--textColor);
+  color: $primary-color;
+}
+
+a {
+  color: rebeccapurple;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// 1231
+/* 去注释啊 */
+
+.box {
+  display: flex;
+  flex: 1;
+}
+
+.test {
+  color: aqua;
+}

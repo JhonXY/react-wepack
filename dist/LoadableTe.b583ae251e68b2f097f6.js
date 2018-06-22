@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{20:function(e,t,n){},21:function(e,t,n){"use strict";n.r(t);var r=n(0),s=n.n(r),l=(n(20),function(e){function t(){return babelHelpers.classCallCheck(this,t),babelHelpers.possibleConstructorReturn(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return babelHelpers.inherits(t,e),babelHelpers.createClass(t,[{key:"render",value:function(){return s.a.createElement("div",null,"test")}}]),t}(r.Component));t.default=l}}]);
+//# sourceMappingURL=LoadableTe.b583ae251e68b2f097f6.js.map
