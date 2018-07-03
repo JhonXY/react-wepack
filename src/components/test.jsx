@@ -5,7 +5,19 @@ import './test.scss'
 class test extends Component {
   render(){ 
     return (
-      <div>test</div>
+      <React.Fragment>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+      </React.Fragment>
     )
   }
 }

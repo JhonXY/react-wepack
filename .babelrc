@@ -2,9 +2,6 @@
   "presets": [
     "react-app"
   ],
-  "plugins": [
-    "external-helpers"
-  ],
   "env": {
     "production": {
       "plugins": [

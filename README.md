@@ -26,3 +26,48 @@ transform-class-properties: 主要是为了使用直接在class中 state = {} �
 暂时只使用了**autoprefixer**做浏览器前缀自动添加，关于浏览器的兼容策略，在package.json中用bowerlist做了统一标识。
 
 > 更多打包细节直接在build下的分环境webpack配置中注释了
+
+
+## bug
+
+1. babel全局报错
+
+babel中配置该插件在开发环境会报错。
+```
+  "plugins": [
+    "external-helpers"
+  ],
+```
+可以查看该[issure](https://github.com/storybooks/storybook/issues/1320)了解详情。
+
+
+## 项目结构
+```
+├── build                   // webpack配置文件
+├── dist                    // 打包后文件
+├── src                     // 开发内容
+│    ├── assets             // 静态文件
+│    ├── components         // Pure Components
+│    ├── containers         // Impure Components
+│    ├── pages              // 具体页面
+│    ├── redux              // redux相关
+│    ├── styles             // 单独的css文件
+│    ├── App.js             // react初始render
+│    └── index.js           // webpack入口
+├── static                  // 打包后直接复制的静态资源
+├── index.html              // webpack模版
+├── .babelrc                // babel配置
+├── .postcssrc.js           // postcss配置
+├── webpack.config.js       // webpack启动
+├── package.json            // 依赖与npm script
+├── yarn.lock               // yarn相关
+```
+> ### PureComponent
+>
+> react 内置的一个组件创建方法。除了提供了一个具有浅比较的shouldComponentUpdate方法，PureComponent和Component基本上完全相同。当props或者state改变时，PureComponent将对props和state进行浅比较。另一方面，Component不会比较当前和下个状态的props和state。因此，每当shouldComponentUpdate被调用时，组件默认的会重新渲染。
+
+## PureComponent 对比 Component
+
+当props或者state改变的时候，会执行shouldComponentUpdate方法来判断是否需要重新render组建，我们平时在做页面的性能优化的时候，往往也是通过这一步来判断的。Component默认的shouldComponentUpdate返回的是true。
+
+也就是一旦改变则触发render这是十分消耗性能的

@@ -27,11 +27,11 @@ module.exports = merge.smart(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html', // 配置输出文件名和路径
-      template: '../index.html', // 配置文件模板
+      template: './index.html', // 配置文件模板
     }),
     // 以下是启动hmr所必须的plugins
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     hot: true
